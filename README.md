@@ -84,24 +84,6 @@
 
 ---
 
-## 🖼 截图
-
-> 完整截图见 [`docs/screenshots/`](docs/screenshots/)
-
-| 模拟交易训练 | 行情预警管理 |
-|---|---|
-| ![模拟训练](docs/screenshots/P5-S4-sim-window.png) | ![预警管理](docs/screenshots/P6-S2-alert-manager.png) |
-
-| 选股结果导出 | 个股备注 |
-|---|---|
-| ![导出](docs/screenshots/P4-S4-export-300.png) | ![备注](docs/screenshots/P4-S5-note-detail.png) |
-
-| 快捷键说明 | 日志查看器 |
-|---|---|
-| ![快捷键](docs/screenshots/P6-S2-shortcut-help.png) | ![日志](docs/screenshots/P6-S3-log-viewer.png) |
-
----
-
 ## 🏗 架构
 
 **三层分层架构**，引擎层**严禁依赖任何 Qt 代码**，保证可独立单测、可替换 UI：

@@ -1,0 +1,35 @@
+# A股行情分析与选股软件 —— 运行时配置
+# 键清单与默认值严格遵循《开发手册与交接文档》§4.9 与《细化设计》§5.5。
+# 读取方式：app.core.config.get_config().get("data.source.primary")
+# 说明：若本文件缺失或某项被删除，程序会回退到 app/core/config.py 中的内置默认值。
+
+data:
+  source:
+    primary: baostock       # 主数据源（日/周/月线 + 5/15/30/60 分钟、财务；本机对
+                            #   push2his.eastmoney.com 间歇不可达故换源，见交接文档 R14）
+    fallback: akshare       # 兜底数据源（东财；网络恢复时可自动顶上）
+    minute: pytdx           # 1 分钟历史数据源（网络分页 + 本地 .lc1）
+  db_path: data/app.db      # SQLite 数据库文件（相对项目根目录）
+  cache_dir: data/cache     # 缓存目录（Parquet 分钟数据兜底等）
+  indicator_engine: pandas_ta   # 指标引擎（后续可切 talib_binary）
+
+ui:
+  theme: dark_red_green     # 深色 + 红涨绿跌
+  red_color: "#e74c3c"      # 涨（红）
+  green_color: "#2ecc71"    # 跌（绿）
+
+sim:
+  initial_cash: 100000      # 模拟训练初始资金
+  speed_default: 1          # 默认回放倍速
+  speed_map: {1: 400, 2: 200, 5: 80, 10: 40}   # 倍速 -> 毫秒/每 tick（1x=400ms，2026-10-01 调慢一半）
+
+update:
+  batch_size: 50            # 数据更新批大小
+  default_start: "2015-01-01"   # 首次更新（无本地历史）的默认起始日
+
+export:
+  excel_path: data/exports  # Excel 导出目录
+  image_dpi: 300            # K线高清图导出 DPI
+
+backup:
+  dir: data/backups         # 一键备份目录

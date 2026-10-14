@@ -1,0 +1,168 @@
+/* =====================================================================
+ * app.qss —— 深色红涨绿跌主题模板
+ * 占位符 {BG_DARK} {PANEL_BG} {TOOLBAR_BG} {TEXT_COLOR} {SUBTEXT_COLOR}
+ *        {GRID_COLOR} {ACCENT_COLOR} 由 apply_theme 用 color_map() 注入。
+ * 注意：CSS 自身的花括号写作 {{ }}（供 str.format 转义）。
+ * ===================================================================== */
+
+/* -------- 全局 -------- */
+QMainWindow {{
+    background-color: {BG_DARK};
+}}
+QWidget {{
+    background-color: {BG_DARK};
+    color: {TEXT_COLOR};
+    font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+    font-size: 12px;
+}}
+QLabel {{
+    background: transparent;
+}}
+
+/* -------- 顶部工具栏 -------- */
+QToolBar {{
+    background-color: {TOOLBAR_BG};
+    border: none;
+    padding: 2px;
+    spacing: 4px;
+}}
+QToolBar QToolButton {{
+    color: {TEXT_COLOR};
+    background: transparent;
+    padding: 4px 10px;
+    border-radius: 4px;
+}}
+QToolBar QToolButton:hover {{
+    background-color: {PANEL_BG};
+}}
+QToolBar QToolButton:pressed {{
+    background-color: {ACCENT_COLOR};
+    color: #ffffff;
+}}
+
+/* -------- 菜单栏 / 菜单 -------- */
+QMenuBar {{
+    background-color: {PANEL_BG};
+    color: {TEXT_COLOR};
+}}
+QMenuBar::item {{
+    background: transparent;
+    padding: 4px 10px;
+}}
+QMenuBar::item:selected {{
+    background-color: {ACCENT_COLOR};
+    color: #ffffff;
+}}
+QMenu {{
+    background-color: {PANEL_BG};
+    color: {TEXT_COLOR};
+    border: 1px solid {GRID_COLOR};
+}}
+QMenu::item {{
+    padding: 4px 24px 4px 12px;
+}}
+QMenu::item:selected {{
+    background-color: {ACCENT_COLOR};
+    color: #ffffff;
+}}
+QMenu::separator {{
+    height: 1px;
+    background: {GRID_COLOR};
+    margin: 4px 6px;
+}}
+
+/* -------- 列表 / 树（自选股栏） -------- */
+QListWidget, QTreeWidget {{
+    background-color: {PANEL_BG};
+    color: {TEXT_COLOR};
+    border: 1px solid {GRID_COLOR};
+    outline: none;
+}}
+QListWidget::item, QTreeWidget::item {{
+    padding: 4px 6px;
+}}
+QListWidget::item:hover, QTreeWidget::item:hover {{
+    background-color: {BG_DARK};
+}}
+QListWidget::item:selected, QTreeWidget::item:selected {{
+    background-color: {ACCENT_COLOR};
+    color: #ffffff;
+}}
+
+/* -------- 分隔条 -------- */
+QSplitter::handle {{
+    background-color: {GRID_COLOR};
+}}
+QSplitter::handle:horizontal {{
+    width: 2px;
+}}
+QSplitter::handle:vertical {{
+    height: 2px;
+}}
+
+/* -------- 状态栏 -------- */
+QStatusBar {{
+    background-color: {TOOLBAR_BG};
+    color: {SUBTEXT_COLOR};
+}}
+QStatusBar::item {{
+    border: none;
+}}
+
+/* -------- 下拉框 -------- */
+QComboBox {{
+    background-color: {PANEL_BG};
+    color: {TEXT_COLOR};
+    border: 1px solid {GRID_COLOR};
+    padding: 2px 6px;
+    border-radius: 3px;
+}}
+QComboBox QAbstractItemView {{
+    background-color: {PANEL_BG};
+    color: {TEXT_COLOR};
+    selection-background-color: {ACCENT_COLOR};
+}}
+
+/* -------- 滚动条（垂直） -------- */
+QScrollBar:vertical {{
+    background: {BG_DARK};
+    width: 10px;
+    margin: 0px;
+}}
+QScrollBar::handle:vertical {{
+    background: {GRID_COLOR};
+    min-height: 20px;
+    border-radius: 5px;
+}}
+QScrollBar::handle:vertical:hover {{
+    background: {SUBTEXT_COLOR};
+}}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {{
+    height: 0px;
+    background: none;
+}}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {{
+    background: none;
+}}
+
+/* -------- 滚动条（水平） -------- */
+QScrollBar:horizontal {{
+    background: {BG_DARK};
+    height: 10px;
+    margin: 0px;
+}}
+QScrollBar::handle:horizontal {{
+    background: {GRID_COLOR};
+    min-width: 20px;
+    border-radius: 5px;
+}}
+QScrollBar::handle:horizontal:hover {{
+    background: {SUBTEXT_COLOR};
+}}
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {{
+    width: 0px;
+    background: none;
+}}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {{
+    background: none;
+}}

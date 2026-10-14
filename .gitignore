@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.pytest_tmp_*/
+
+# 虚拟环境
+.venv/
+venv/
+
+# 运行时数据（整个 data/ 都是运行时生成的，全部忽略，仅保留占位文件）
+data/*
+!data/.gitkeep
+
+# 日志
+*.log
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+desktop.ini
+
+# 根目录临时调试文件（历史遗留的临时脚本/输出）
+/_*.py
+/_*.txt
